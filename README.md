@@ -16,4 +16,4 @@ https://example.com/<OPTIONS>/<MEDIA URL>
 
 # Docker
 
-TODO
+Experimental Docker support.
