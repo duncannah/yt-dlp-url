@@ -1,0 +1,43 @@
+{
+	"name": "yt-dlp-url",
+	"version": "1.0.0",
+	"description": "",
+	"main": "build/app.js",
+	"type": "module",
+	"engines": {
+		"node": ">=17"
+	},
+	"scripts": {
+		"build": "tsc",
+		"start": "node ./build/app.js",
+		"start:dev": "tsc && node ./build/app.js",
+		"lint": "eslint . --ext .ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/duncannah/yt-dlp-url.git"
+	},
+	"author": "duncannah",
+	"license": "AGPL-3.0",
+	"bugs": {
+		"url": "https://github.com/duncannah/yt-dlp-url/issues"
+	},
+	"homepage": "https://github.com/duncannah/yt-dlp-url#readme",
+	"devDependencies": {
+		"@types/koa": "^2.13.4",
+		"@types/node": "^17.0.17",
+		"@typescript-eslint/eslint-plugin": "^5.11.0",
+		"@typescript-eslint/parser": "^5.11.0",
+		"eslint": "^8.9.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-node": "^11.1.0"
+	},
+	"dependencies": {
+		"dotenv": "^16.0.0",
+		"koa": "^2.13.4",
+		"node-fetch": "^3.2.0",
+		"promisify-child-process": "^4.1.1",
+		"typescript": "^4.6.0-dev.20220211",
+		"zod": "^3.11.6"
+	}
+}

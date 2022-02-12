@@ -1,0 +1,8 @@
+node_modules
+/build
+/bin
+.env
+.DS_Store
+Thumbs.db
+.vscode
+/test
