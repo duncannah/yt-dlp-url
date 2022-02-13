@@ -112,7 +112,12 @@ const pickBestFormats = (formats: z.infer<typeof YTDLPFormatSchema>[]) => {
 export const getMedia = async (url: string, formatOptions: string) => {
 	const mediaInfo = await getMediaInfo(url, formatOptions);
 
-	const entries: { url: string; title: string | null; [key: string]: unknown }[] = [];
+	const entries: {
+		url: string;
+		title: string | null;
+		direct?: boolean;
+		[key: string]: unknown;
+	}[] = [];
 
 	if (mediaInfo.direct) return mediaInfo.url;
 	else if (formatOptions && mediaInfo.requested_downloads && mediaInfo.requested_downloads[0])
@@ -120,7 +125,11 @@ export const getMedia = async (url: string, formatOptions: string) => {
 	else if (["playlist", "multi_video"].includes(mediaInfo._type) && mediaInfo.entries)
 		entries.push(...mediaInfo.entries);
 	else if (mediaInfo.formats)
-		entries.push({ ...pickBestFormats(mediaInfo.formats)[0], title: mediaInfo.title });
+		entries.push({
+			...pickBestFormats(mediaInfo.formats)[0],
+			title: mediaInfo.title,
+			direct: true,
+		});
 
 	return entries;
 };

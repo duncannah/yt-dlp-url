@@ -49,7 +49,11 @@ app.use(async (ctx) => {
 				.map((entry) =>
 					[
 						`#EXTINF:-1,${entry.title || entry.url}`,
-						(formatOptions ? `${BASE_URL}/${formatOptions}/` : "") + entry.url,
+						(formatOptions
+							? `${BASE_URL}/${formatOptions}/`
+							: !entry.direct
+							? `${BASE_URL}/`
+							: "") + entry.url,
 					].join("\n")
 				)
 				.join("\n");
