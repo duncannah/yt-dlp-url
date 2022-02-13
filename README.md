@@ -1,6 +1,6 @@
 # yt-dlp-url
 
-Creates a URL endpoint to retrieve direct links to media streams from media sites, for use with media players with no such functionality. Also works with playlists. Uses [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+A small web service to retrofit media players with [yt-dlp](https://github.com/yt-dlp/yt-dlp) (youtube-dl fork) support. Also works with playlists.
 
 ![cover](cover.png)
 
