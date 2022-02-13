@@ -21,6 +21,9 @@ app.use(async (ctx) => {
 	let url = ctx.request.url.slice(1);
 	if (["favicon.ico"].includes(url.split("?")[0])) return;
 
+	// Fix protocol getting mangled by reverse proxy
+	url = url.replace(/^(https{0,1}):\/(\w)/, "$1://$2");
+
 	const splitURL = url.split("/");
 	let formatOptions = "";
 	if (!splitURL[0].match(/[.:]/)) {
