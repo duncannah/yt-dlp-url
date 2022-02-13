@@ -11,7 +11,8 @@
 		"build": "tsc",
 		"start": "node ./build/app.js",
 		"start:dev": "tsc && node ./build/app.js",
-		"lint": "eslint . --ext .ts"
+		"lint": "eslint . --ext .ts",
+		"commit": "cz"
 	},
 	"repository": {
 		"type": "git",
@@ -28,6 +29,8 @@
 		"@types/node": "^17.0.17",
 		"@typescript-eslint/eslint-plugin": "^5.11.0",
 		"@typescript-eslint/parser": "^5.11.0",
+		"commitizen": "^4.2.4",
+		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.9.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-node": "^11.1.0"
@@ -39,5 +42,10 @@
 		"promisify-child-process": "^4.1.1",
 		"typescript": "^4.6.0-dev.20220211",
 		"zod": "^3.11.6"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
 	}
 }
