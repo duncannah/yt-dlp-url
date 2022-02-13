@@ -6,9 +6,7 @@ WORKDIR /usr/src/app
 RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
 
 # Get pnpm
-RUN apk add --no-cache curl \
-	&& curl -fsSL 'https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64' -o /bin/pnpm \
-	&& chmod +x /bin/pnpm
+RUN npm install -g pnpm
 
 COPY package.json pnpm-lock.yaml ./
 
