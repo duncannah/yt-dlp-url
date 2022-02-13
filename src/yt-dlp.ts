@@ -81,7 +81,7 @@ const YTDLPSchema = z.object({
 		)
 		.optional(),
 	requested_downloads: z
-		.array(z.object({ url: z.string().url() }).optional())
+		.array(z.object({ url: z.string().url().optional() }).optional())
 		.nullish()
 		.optional(),
 	direct: z.boolean().optional(),
