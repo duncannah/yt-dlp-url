@@ -25,15 +25,15 @@
 	},
 	"homepage": "https://github.com/duncannah/yt-dlp-url#readme",
 	"devDependencies": {
-		"@types/koa": "^2.13.4",
-		"@types/node": "^17.0.17",
-		"@typescript-eslint/eslint-plugin": "^5.11.0",
-		"@typescript-eslint/parser": "^5.11.0",
-		"commitizen": "^4.2.4",
-		"cz-conventional-changelog": "^3.3.0",
-		"eslint": "^8.9.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-node": "^11.1.0"
+		"@types/koa": "2.13.4",
+		"@types/node": "17.0.18",
+		"@typescript-eslint/eslint-plugin": "5.12.0",
+		"@typescript-eslint/parser": "5.12.0",
+		"commitizen": "4.2.4",
+		"cz-conventional-changelog": "3.3.0",
+		"eslint": "8.9.0",
+		"eslint-config-prettier": "8.3.0",
+		"eslint-plugin-node": "11.1.0"
 	},
 	"dependencies": {
 		"dotenv": "^16.0.0",
