@@ -16,6 +16,9 @@ COPY . .
 
 RUN pnpm build
 
+RUN pnpm prune --prod
+RUN pnpm store prune
+
 FROM base as production
 
 EXPOSE 8080

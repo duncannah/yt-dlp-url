@@ -22,7 +22,6 @@ dependencies:
   koa: 2.13.4
   node-fetch: 3.2.0
   promisify-child-process: 4.1.1
-  typescript: 4.6.0-dev.20220211
   zod: 3.11.6
 
 devDependencies:
@@ -35,6 +34,7 @@ devDependencies:
   eslint: 8.9.0
   eslint-config-prettier: 8.3.0_eslint@8.9.0
   eslint-plugin-node: 11.1.0_eslint@8.9.0
+  typescript: 4.6.0-dev.20220211
 
 packages:
 
@@ -2044,7 +2044,7 @@ packages:
     resolution: {integrity: sha512-wMVJ7QGajX2OXpGrX8cphiTsyab79JS88F00azUMgO65ooUFgyFFQaXn2zOO8h8RluD6kHWzCM3WTa0Tc0Ui+g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: false
+    dev: true
 
   /universalify/0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
