@@ -16,4 +16,6 @@ https://example.com/<OPTIONS>/<MEDIA URL>
 
 # Docker
 
-Experimental Docker support.
+Docker image is available at [https://hub.docker.com/r/duncannah/yt-dlp-url](https://hub.docker.com/r/duncannah/yt-dlp-url)
+
+The app runs on port 8080.
