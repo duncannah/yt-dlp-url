@@ -15,7 +15,7 @@ const GitHubRepo = process.env["YTDLP-REPO"] || "yt-dlp/yt-dlp";
 
 const GitHubReleasesSchema = z.array(
 	z.object({
-		tag_name: z.string(),
+		target_commitish: z.string(),
 		assets: z.array(
 			z.object({
 				name: z.string(),
@@ -39,7 +39,7 @@ const hydrate = async () => {
 	const currentVersion = (await fs.readFile(LatestVerPath).catch(() => "")).toString();
 
 	const latestRelease = (await getLatestReleases())[0];
-	if (latestRelease.tag_name === currentVersion) return;
+	if (latestRelease.target_commitish === currentVersion) return;
 
 	const YTDLPBinAsset = latestRelease.assets.find((a) => a.name === "yt-dlp");
 	if (!YTDLPBinAsset) throw new Error("Can't find yt-dlp in release assets");
@@ -47,7 +47,7 @@ const hydrate = async () => {
 	const bin = await fetch(YTDLPBinAsset.browser_download_url);
 
 	await fs.writeFile(YTDLPPath, Buffer.from(await bin.arrayBuffer()));
-	await fs.writeFile(LatestVerPath, latestRelease.tag_name);
+	await fs.writeFile(LatestVerPath, latestRelease.target_commitish);
 };
 
 export const startHydrating = () => {
