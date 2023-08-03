@@ -32,7 +32,7 @@
 		"commitizen": "4.2.4",
 		"cz-conventional-changelog": "3.3.0",
 		"eslint": "8.9.0",
-		"eslint-config-prettier": "8.3.0",
+		"eslint-config-prettier": "8.10.0",
 		"eslint-plugin-node": "11.1.0",
 		"typescript": "^4.6.0-dev.20220211"
 	},
