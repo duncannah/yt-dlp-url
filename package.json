@@ -25,7 +25,7 @@
 	},
 	"homepage": "https://github.com/duncannah/yt-dlp-url#readme",
 	"devDependencies": {
-		"@types/koa": "2.13.4",
+		"@types/koa": "2.13.10",
 		"@types/node": "17.0.18",
 		"@typescript-eslint/eslint-plugin": "5.12.0",
 		"@typescript-eslint/parser": "5.12.0",
