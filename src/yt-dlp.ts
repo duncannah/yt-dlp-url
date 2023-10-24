@@ -11,6 +11,24 @@ const BinPath = path.join("bin");
 const LatestVerPath = path.join(BinPath, "latest");
 const YTDLPPath = path.join(BinPath, "yt-dlp");
 
+const findPython = async () => {
+	// Check for `python` first
+	const python = await execFile("python", ["--version"]).catch(() => null);
+	if (python) {
+		const version = (python.stdout || "").toString().split(" ")[1];
+		if (version.startsWith("3.")) return "python";
+	}
+
+	// Check for `python3` next
+	const python3 = await execFile("python3", ["--version"]).catch(() => null);
+	if (python3) return "python3";
+
+	// Python isn't installed at all
+	throw new Error("Python 3 not installed");
+};
+
+const python = await findPython();
+
 const GitHubRepo = process.env["YTDLP-REPO"] || "yt-dlp/yt-dlp";
 
 const GitHubReleasesSchema = z.array(
@@ -93,7 +111,7 @@ const getMediaInfo = async (url: string, formatOptions: string) => {
 	if (formatOptions) formatArgs.push("-f", formatOptions);
 
 	const { stdout } = await execFile(
-		"python3",
+		python,
 		[YTDLPPath, "--no-warnings", "-J", "--flat-playlist", ...formatArgs, "--", url],
 		{ maxBuffer: 1000 * 1000 * 2, timeout: 1000 * 60 }
 	);
