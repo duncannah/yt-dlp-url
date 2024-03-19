@@ -1,4 +1,4 @@
-FROM node:19-alpine as build
+FROM node:20-alpine as build
 
 WORKDIR /usr/src/app
 
@@ -11,7 +11,7 @@ COPY . .
 
 RUN pnpm run build
 
-FROM node:19-alpine as dependencies
+FROM node:20-alpine as dependencies
 
 WORKDIR /usr/src/app
 
@@ -22,7 +22,7 @@ RUN npm install -g pnpm \
 	&& pnpm config set node-linker hoisted \
 	&& pnpm install --frozen-lockfile --prod
 
-FROM node:19-alpine as production
+FROM node:20-alpine as production
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
